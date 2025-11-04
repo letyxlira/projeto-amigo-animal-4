@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     inicializarMenuMobile();
                     inicializarValidacaoFormulario();
                     inicializarTemplatesProjetos();
+                    inicializarModoEscuro(); // <-- Não se esqueça de re-inicializar o Modo Escuro também!
                 })
                 .catch(err => {
                     console.error('Falha ao carregar página: ', err);
@@ -110,9 +111,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function inicializarModoEscuro() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlEl = document.documentElement; 
+
+        if (!themeToggle) return;
+
+        let storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark') {
+            htmlEl.classList.add('dark-mode');
+        } 
+        else if (storedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            htmlEl.classList.add('dark-mode');
+        }
+
+        themeToggle.addEventListener('click', function() {
+            if (htmlEl.classList.contains('dark-mode')) {
+                htmlEl.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlEl.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
+
     inicializarMenuMobile();
     inicializarValidacaoFormulario();
     inicializarTemplatesProjetos();
     inicializarRoteamentoSPA();
+    inicializarModoEscuro();
 
 });

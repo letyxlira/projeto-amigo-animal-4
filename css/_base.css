@@ -49,3 +49,13 @@ img {
     height: auto;
     display: block;
 } 
+
+html.dark-mode {
+    --cor-primaria: #409CFF; 
+    --cor-primaria-escura: #0056b3;
+    --cor-secundaria: #adb5bd; 
+    
+    --cor-fundo: #121212;    
+    --cor-texto: #f1f1f1;    
+    --cor-branca: #1E1E1E;   
+}

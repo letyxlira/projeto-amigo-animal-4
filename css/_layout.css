@@ -14,17 +14,25 @@ header {
     padding: var(--espaco-sm) var(--espaco-lg);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
 }
 header h1 {
     font-size: var(--fonte-xl);
     color: var(--cor-primaria);
 }
+
+/* * A CORREÇÃO ESTÁ AQUI *
+ * A regra está SEPARADA, logo após o "header h1"
+ */
+nav.menu-principal {
+    margin-left: auto; 
+}
+
 header nav ul {
     list-style: none;
     display: flex;
     gap: var(--espaco-md);
+    align-items: center;
 }
 header nav a {
     text-decoration: none;
@@ -34,16 +42,14 @@ header nav a {
     padding-bottom: var(--espaco-xs);
     transition: color 0.3s ease;
 }
-
-/* * A CORREÇÃO 1 ESTÁ AQUI (Passo 2 da Entrega IV)
- * Adicionamos o seletor :focus para acessibilidade de teclado
- */
 header nav a:hover,
 header nav a:focus {
     color: var(--cor-primaria);
     border-bottom: 2px solid var(--cor-primaria);
 }
-
+header .theme-toggle-btn {
+    margin-left: var(--espaco-md);
+}
 main#page-content {
     grid-area: main;
     width: 90%;
@@ -52,7 +58,7 @@ main#page-content {
 }
 footer {
     grid-area: footer;
-    background-color: #333;
+    background-color: var(--cor-branca);
     color: var(--cor-fundo);
     text-align: center;
     padding: var(--espaco-md) 0;
@@ -100,15 +106,9 @@ footer {
         padding: var(--espaco-sm);
         border-bottom: none !important;
     }
-    
-    /* * A CORREÇÃO 2 ESTÁ AQUI (Passo 2 da Entrega IV)
-     * Trocamos "#menu-toggle:checked ~ .menu-principal"
-     * por ".menu-principal.menu-aberto"
-     */
     .menu-principal.menu-aberto {
         display: block;
     }
-
     .submenu {
         position: static;
         display: block;

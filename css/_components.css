@@ -38,7 +38,6 @@
     height: 24px;
     position: relative;
     cursor: pointer;
-    /* Adicionamos isso para o <button> não ter estilo de botão */
     background: transparent;
     border: none;
 }
@@ -55,11 +54,6 @@
 .hamburger-linha:nth-child(1) { top: 0; }
 .hamburger-linha:nth-child(2) { top: 10px; }
 .hamburger-linha:nth-child(3) { top: 20px; }
-
-/* * A CORREÇÃO ESTÁ AQUI (Passo 2 da Entrega IV)
- * Trocamos "#menu-toggle:checked ~ .menu-hamburger"
- * por ".menu-hamburger.is-active"
- */
 .menu-hamburger.is-active .hamburger-linha:nth-child(1) {
     transform: rotate(45deg);
     top: 10px;
@@ -71,7 +65,6 @@
     transform: rotate(-45deg);
     top: 10px;
 }
-
 .btn {
     display: inline-block;
     padding: var(--espaco-xs) var(--espaco-md);
@@ -251,3 +244,28 @@
     box-shadow: var(--sombra-padrao);
     margin: var(--espaco-md) 0;
 } 
+.theme-toggle-btn {
+    background: none;
+    border: 2px solid var(--cor-secundaria);
+    color: var(--cor-primaria);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.theme-toggle-btn:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    border-color: var(--cor-primaria);
+}
+.theme-toggle-btn::before {
+    content: '🌙';
+}
+html.dark-mode .theme-toggle-btn::before {
+    content: '☀️';
+}
