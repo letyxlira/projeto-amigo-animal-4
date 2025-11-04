@@ -9,34 +9,36 @@
 <body>
 
     <header>
-        <h1><a href="index.html">Amigo Animal</a></h1>
+    <h1><a href="index.html">Amigo Animal</a></h1>
 
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-hamburger">
-            <span class="hamburger-linha"></span>
-            <span class="hamburger-linha"></span>
-            <span class="hamburger-linha"></span>
-        </label>
+    <button class="menu-hamburger" 
+            aria-label="Abrir menu de navegação"
+            aria-expanded="false" 
+            aria-controls="menu-principal-lista">
+        <span class="hamburger-linha"></span>
+        <span class="hamburger-linha"></span>
+        <span class="hamburger-linha"></span>
+    </button>
 
-        <nav class="menu-principal">
-            <ul>
-                <li><a href="index.html">Início</a></li> 
+    <nav class="menu-principal">
+        <ul id="menu-principal-lista">
+            <li><a href="index.html">Início</a></li> 
+            
+            <li class="dropdown">
+                <a href="projetos.html">Projetos</a>
                 
-                <li class="dropdown">
-                    <a href="projetos.html">Projetos</a>
-                    
-                    <ul class="submenu">
-                        <li><a href="projetos.html#saude">Projeto Saúde</a></li>
-                        <li><a href="projetos.html#carinho">Projeto Carinho</a></li>
-                        <li><a href="projetos.html#feira-adocao">Feira de Adoção</a></li>
-                        <li><a href="projetos.html#capacitacao">Capacitação</a></li>
-                    </ul>
-                </li>
+                <ul class="submenu">
+                    <li><a href="projetos.html#saude">Projeto Saúde</a></li>
+                    <li><a href="projetos.html#carinho">Projeto Carinho</a></li>
+                    <li><a href="projetos.html#feira-adocao">Feira de Adoção</a></li>
+                    <li><a href="projetos.html#capacitacao">Capacitação</a></li>
+                </ul>
+            </li>
 
-                <li><a href="cadastro.html" class="btn btn--primario btn--sm">Participe</a></li>
-            </ul>
-        </nav>
-    </header>
+            <li><a href="cadastro.html" class="btn btn--primario btn--sm">Participe</a></li>
+        </ul>
+    </nav>
+</header>
 
     <main id="page-content"> 
         <div class="row">

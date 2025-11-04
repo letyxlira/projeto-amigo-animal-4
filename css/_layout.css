@@ -34,10 +34,16 @@ header nav a {
     padding-bottom: var(--espaco-xs);
     transition: color 0.3s ease;
 }
-header nav a:hover {
+
+/* * A CORREÇÃO 1 ESTÁ AQUI (Passo 2 da Entrega IV)
+ * Adicionamos o seletor :focus para acessibilidade de teclado
+ */
+header nav a:hover,
+header nav a:focus {
     color: var(--cor-primaria);
     border-bottom: 2px solid var(--cor-primaria);
 }
+
 main#page-content {
     grid-area: main;
     width: 90%;
@@ -94,9 +100,15 @@ footer {
         padding: var(--espaco-sm);
         border-bottom: none !important;
     }
-    #menu-toggle:checked ~ .menu-principal {
+    
+    /* * A CORREÇÃO 2 ESTÁ AQUI (Passo 2 da Entrega IV)
+     * Trocamos "#menu-toggle:checked ~ .menu-principal"
+     * por ".menu-principal.menu-aberto"
+     */
+    .menu-principal.menu-aberto {
         display: block;
     }
+
     .submenu {
         position: static;
         display: block;

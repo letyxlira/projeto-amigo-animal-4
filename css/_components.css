@@ -38,6 +38,9 @@
     height: 24px;
     position: relative;
     cursor: pointer;
+    /* Adicionamos isso para o <button> não ter estilo de botão */
+    background: transparent;
+    border: none;
 }
 .hamburger-linha {
     display: block;
@@ -52,17 +55,23 @@
 .hamburger-linha:nth-child(1) { top: 0; }
 .hamburger-linha:nth-child(2) { top: 10px; }
 .hamburger-linha:nth-child(3) { top: 20px; }
-#menu-toggle:checked ~ .menu-hamburger .hamburger-linha:nth-child(1) {
+
+/* * A CORREÇÃO ESTÁ AQUI (Passo 2 da Entrega IV)
+ * Trocamos "#menu-toggle:checked ~ .menu-hamburger"
+ * por ".menu-hamburger.is-active"
+ */
+.menu-hamburger.is-active .hamburger-linha:nth-child(1) {
     transform: rotate(45deg);
     top: 10px;
 }
-#menu-toggle:checked ~ .menu-hamburger .hamburger-linha:nth-child(2) {
+.menu-hamburger.is-active .hamburger-linha:nth-child(2) {
     opacity: 0;
 }
-#menu-toggle:checked ~ .menu-hamburger .hamburger-linha:nth-child(3) {
+.menu-hamburger.is-active .hamburger-linha:nth-child(3) {
     transform: rotate(-45deg);
     top: 10px;
 }
+
 .btn {
     display: inline-block;
     padding: var(--espaco-xs) var(--espaco-md);

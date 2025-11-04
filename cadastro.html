@@ -9,34 +9,36 @@
 <body>
 
     <header>
-        <h1><a href="index.html">Amigo Animal</a></h1>
+    <h1><a href="index.html">Amigo Animal</a></h1>
 
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-hamburger">
-            <span class="hamburger-linha"></span>
-            <span class="hamburger-linha"></span>
-            <span class="hamburger-linha"></span>
-        </label>
+    <button class="menu-hamburger" 
+            aria-label="Abrir menu de navegação"
+            aria-expanded="false" 
+            aria-controls="menu-principal-lista">
+        <span class="hamburger-linha"></span>
+        <span class="hamburger-linha"></span>
+        <span class="hamburger-linha"></span>
+    </button>
 
-        <nav class="menu-principal">
-            <ul>
-                <li><a href="index.html">Início</a></li> 
+    <nav class="menu-principal">
+        <ul id="menu-principal-lista">
+            <li><a href="index.html">Início</a></li> 
+            
+            <li class="dropdown">
+                <a href="projetos.html">Projetos</a>
                 
-                <li class="dropdown">
-                    <a href="projetos.html">Projetos</a>
-                    
-                    <ul class="submenu">
-                        <li><a href="projetos.html#saude">Projeto Saúde</a></li>
-                        <li><a href="projetos.html#carinho">Projeto Carinho</a></li>
-                        <li><a href="projetos.html#feira-adocao">Feira de Adoção</a></li>
-                        <li><a href="projetos.html#capacitacao">Capacitação</a></li>
-                    </ul>
-                </li>
+                <ul class="submenu">
+                    <li><a href="projetos.html#saude">Projeto Saúde</a></li>
+                    <li><a href="projetos.html#carinho">Projeto Carinho</a></li>
+                    <li><a href="projetos.html#feira-adocao">Feira de Adoção</a></li>
+                    <li><a href="projetos.html#capacitacao">Capacitação</a></li>
+                </ul>
+            </li>
 
-                <li><a href="cadastro.html" class="btn btn--primario btn--sm">Participe</a></li>
-            </ul>
-        </nav>
-    </header>
+            <li><a href="cadastro.html" class="btn btn--primario btn--sm">Participe</a></li>
+        </ul>
+    </nav>
+</header>
 
     <main id="page-content"> 
         <div class="row">
@@ -52,12 +54,12 @@
 
                         <div>
                             <label for="nome">Nome Completo:</label>
-                            <input type="text" id="nome" name="nome" required>
+                            <input type="text" id="nome" name="nome" required aria-invalid="false">
                         </div>
 
                         <div>
                             <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required aria-invalid="false">
                         </div>
 
                         <div>
@@ -65,7 +67,7 @@
                             <input type="text" id="cpf" name="cpf" 
                                    placeholder="000.000.000-00"
                                    pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" 
-                                   title="Digite o CPF no formato: 000.000.000-00" required>
+                                   title="Digite o CPF no formato: 000.000.000-00" required aria-invalid="false">
                         </div>
 
                         <div>
@@ -73,12 +75,12 @@
                             <input type="tel" id="telefone" name="telefone"
                                    placeholder="(00) 00000-0000"
                                    pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
-                                   title="Digite o Telefone no formato: (00) 00000-0000" required>
+                                   title="Digite o Telefone no formato: (00) 00000-0000" required aria-invalid="false">
                         </div>
 
                         <div>
                             <label for="nascimento">Data de Nascimento:</label>
-                            <input type="date" id="nascimento" name="nascimento" required>
+                            <input type="date" id="nascimento" name="nascimento" required aria-invalid="false">
                         </div>
                     </fieldset>
 
@@ -90,22 +92,22 @@
                             <input type="text" id="cep" name="cep"
                                    placeholder="00000-000"
                                    pattern="[0-9]{5}-[0-9]{3}"
-                                   title="Digite o CEP no formato: 00000-000" required>
+                                   title="Digite o CEP no formato: 00000-000" required aria-invalid="false">
                         </div>
 
                         <div>
                             <label for="endereco">Endereço (Rua, Nº):</label>
-                            <input type="text" id="endereco" name="endereco" required>
+                            <input type="text" id="endereco" name="endereco" required aria-invalid="false">
                         </div>
 
                         <div>
                             <label for="cidade">Cidade:</label>
-                            <input type="text" id="cidade" name="cidade" required>
+                            <input type="text" id="cidade" name="cidade" required aria-invalid="false">
                         </div>
 
                         <div>
                             <label for="estado">Estado:</label>
-                            <input type="text" id="estado" name="estado" required>
+                            <input type="text" id="estado" name="estado" required aria-invalid="false">
                         </div>
                     </fieldset>
 
