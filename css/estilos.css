@@ -1,0 +1,10 @@
+/* css/estilos.css (Arquivo Principal) */
+
+/* 1. Importa nossas variáveis e regras de base */
+@import url('_base.css');
+
+/* 2. Importa as regras de layout (header, footer, etc.) */
+@import url('_layout.css');
+
+/* 3. Importa os componentes (botões, cards, etc.) */
+@import url('_components.css');

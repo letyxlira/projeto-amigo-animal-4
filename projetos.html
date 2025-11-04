@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Animal - Nossos Projetos</title> 
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header>
+    <h1><a href="index.html">Amigo Animal</a></h1>
+
+    <button class="menu-hamburger" 
+            aria-label="Abrir menu de navegação"
+            aria-expanded="false" 
+            aria-controls="menu-principal-lista">
+        <span class="hamburger-linha"></span>
+        <span class="hamburger-linha"></span>
+        <span class="hamburger-linha"></span>
+    </button>
+
+    <nav class="menu-principal">
+        <ul id="menu-principal-lista">
+            <li><a href="index.html">Início</a></li> 
+            
+            <li class="dropdown">
+                <a href="projetos.html">Projetos</a>
+                
+                <ul class="submenu">
+                    <li><a href="projetos.html#saude">Projeto Saúde</a></li>
+                    <li><a href="projetos.html#carinho">Projeto Carinho</a></li>
+                    <li><a href="projetos.html#feira-adocao">Feira de Adoção</a></li>
+                    <li><a href="projetos.html#capacitacao">Capacitação</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cadastro.html" class="btn btn--primario btn--sm">Participe</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main id="page-content">
+        <h2>Nossos Projetos</h2>
+        <p>Conheça as frentes de atuação da nossa ONG e veja como seu apoio faz a diferença.</p>
+
+        <div class="row" id="container-projetos">
+            </div> 
+        
+        <div class="row">
+            <section class="col-12">
+                <h2>Como Ajudar</h2>
+                <p>Você pode fazer a diferença e se tornar parte dessa transformação!</p>
+                <ul>
+                    <li><a href="cadastro.html" class="btn btn--primario btn--sm">Seja um voluntário</a></li>
+                    <li>Faça uma doação (PIX): <strong>12.345.678/0001-99</strong></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Amigo Animal. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>

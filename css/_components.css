@@ -1,0 +1,253 @@
+.dropdown {
+    position: relative;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--cor-branca);
+    box-shadow: var(--sombra-padrao);
+    border-radius: 0 0 var(--border-radius-padrao) var(--border-radius-padrao);
+    min-width: 200px;
+    z-index: 10;
+    list-style: none;
+}
+.dropdown:hover .submenu {
+    display: block;
+}
+.submenu li {
+    width: 100%;
+}
+.submenu a {
+    display: block;
+    padding: var(--espaco-sm);
+    color: var(--cor-texto);
+    border-bottom: none !important;
+}
+.submenu a:hover {
+    background-color: var(--cor-fundo);
+    color: var(--cor-primaria) !important;
+}
+#menu-toggle {
+    display: none;
+}
+.menu-hamburger {
+    display: none;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    /* Adicionamos isso para o <button> não ter estilo de botão */
+    background: transparent;
+    border: none;
+}
+.hamburger-linha {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--cor-primaria);
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+.hamburger-linha:nth-child(1) { top: 0; }
+.hamburger-linha:nth-child(2) { top: 10px; }
+.hamburger-linha:nth-child(3) { top: 20px; }
+
+/* * A CORREÇÃO ESTÁ AQUI (Passo 2 da Entrega IV)
+ * Trocamos "#menu-toggle:checked ~ .menu-hamburger"
+ * por ".menu-hamburger.is-active"
+ */
+.menu-hamburger.is-active .hamburger-linha:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+}
+.menu-hamburger.is-active .hamburger-linha:nth-child(2) {
+    opacity: 0;
+}
+.menu-hamburger.is-active .hamburger-linha:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--espaco-xs) var(--espaco-md);
+    font-size: var(--fonte-md);
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: var(--border-radius-padrao);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn--primario {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+}
+.btn--sm {
+    font-size: var(--fonte-sm);
+    padding: var(--espaco-xs) var(--espaco-sm);
+}
+.btn--primario:hover {
+    background-color: var(--cor-primaria-escura);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.btn--primario:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3);
+}
+.btn--primario:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+.btn--primario:disabled,
+.btn--primario.disabled {
+    background-color: var(--cor-secundaria);
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+#form-cadastro fieldset {
+    border: 1px solid var(--cor-secundaria);
+    border-radius: var(--border-radius-padrao);
+    padding: var(--espaco-md);
+    margin-bottom: var(--espaco-lg);
+}
+#form-cadastro legend {
+    font-size: var(--fonte-lg);
+    font-weight: 600;
+    color: var(--cor-primaria);
+    padding: 0 var(--espaco-xs);
+}
+#form-cadastro div {
+    margin-bottom: var(--espaco-sm);
+}
+#form-cadastro label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--espaco-xs);
+}
+#form-cadastro input[type="text"],
+#form-cadastro input[type="email"],
+#form-cadastro input[type="tel"],
+#form-cadastro input[type="date"] {
+    width: 100%;
+    padding: var(--espaco-sm);
+    border: 2px solid var(--cor-secundaria);
+    border-radius: var(--border-radius-padrao);
+    font-size: var(--fonte-md);
+    transition: all 0.3s ease;
+    outline: none;
+}
+#form-cadastro input:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+#form-cadastro input:valid:not(:focus) {
+    border-color: var(--cor-sucesso);
+}
+#form-cadastro input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: var(--cor-perigo);
+}
+.card {
+    background-color: var(--cor-branca);
+    border-radius: var(--border-radius-padrao);
+    box-shadow: var(--sombra-padrao);
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+.card__imagem-container {
+    height: 220px;
+    overflow: hidden;
+}
+.card__imagem-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 0.5s ease;
+}
+.card:hover .card__imagem-container img {
+    transform: scale(1.05);
+}
+.card__conteudo {
+    padding: var(--espaco-md);
+}
+.card__conteudo h3 {
+    font-size: var(--fonte-lg);
+    color: var(--cor-texto);
+    margin-bottom: var(--espaco-sm);
+}
+.card__conteudo p {
+    font-size: var(--fonte-md);
+    color: var(--cor-secundaria);
+    line-height: 1.6;
+}
+.badge {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    font-size: var(--fonte-sm);
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    border-radius: var(--border-radius-padrao);
+}
+.badge--primario {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+}
+.badge--perigo {
+    background-color: var(--cor-perigo);
+    color: var(--cor-branca);
+}
+.alert {
+    width: 100%;
+    padding: var(--espaco-md);
+    margin-bottom: var(--espaco-md);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-padrao);
+    font-weight: 600;
+}
+.alert--sucesso {
+    background-color: #d4edda;
+    border-color: var(--cor-sucesso);
+    color: #155724;
+}
+.alert--perigo {
+    background-color: #f8d7da;
+    border-color: var(--cor-perigo);
+    color: #721c24;
+}
+.banner-boas-vindas {
+    text-align: center;
+}
+.banner-boas-vindas h2 {
+    font-size: var(--fonte-xxl);
+    color: var(--cor-primaria);
+    margin-bottom: var(--espaco-xs);
+}
+.banner-boas-vindas p {
+    font-size: var(--fonte-lg);
+    color: var(--cor-secundaria);
+    margin-bottom: var(--espaco-md);
+}
+.img-conteudo {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--border-radius-padrao);
+    box-shadow: var(--sombra-padrao);
+    margin: var(--espaco-md) 0;
+} 

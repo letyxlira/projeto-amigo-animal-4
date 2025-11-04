@@ -1,0 +1,185 @@
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+header {
+    grid-area: header;
+    background-color: var(--cor-branca);
+    box-shadow: var(--sombra-padrao);
+    padding: var(--espaco-sm) var(--espaco-lg);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    font-size: var(--fonte-xl);
+    color: var(--cor-primaria);
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--espaco-md);
+}
+header nav a {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-size: var(--fonte-md);
+    font-weight: 600;
+    padding-bottom: var(--espaco-xs);
+    transition: color 0.3s ease;
+}
+
+/* * A CORREÇÃO 1 ESTÁ AQUI (Passo 2 da Entrega IV)
+ * Adicionamos o seletor :focus para acessibilidade de teclado
+ */
+header nav a:hover,
+header nav a:focus {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-primaria);
+}
+
+main#page-content {
+    grid-area: main;
+    width: 90%;
+    max-width: var(--max-width-container);
+    margin: var(--espaco-lg) auto;
+}
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: var(--cor-fundo);
+    text-align: center;
+    padding: var(--espaco-md) 0;
+    font-size: var(--fonte-sm);
+} 
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    gap: var(--espaco-md);
+    margin-bottom: var(--espaco-lg); 
+}
+.col-1 { grid-column: span 1; }
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }
+.col-6 { grid-column: span 6; }
+.col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+.col-9 { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+@media (max-width: 768px) {
+    .menu-hamburger {
+        display: block;
+    }
+    .menu-principal {
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: var(--espaco-sm);
+    }
+    .menu-principal ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .menu-principal li {
+        width: 100%;
+        border-bottom: 1px solid var(--cor-fundo);
+    }
+    .menu-principal a {
+        display: block;
+        width: 100%;
+        padding: var(--espaco-sm);
+        border-bottom: none !important;
+    }
+    
+    /* * A CORREÇÃO 2 ESTÁ AQUI (Passo 2 da Entrega IV)
+     * Trocamos "#menu-toggle:checked ~ .menu-principal"
+     * por ".menu-principal.menu-aberto"
+     */
+    .menu-principal.menu-aberto {
+        display: block;
+    }
+
+    .submenu {
+        position: static;
+        display: block;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: #f1f1f1;
+    }
+    .submenu a {
+        padding-left: var(--espaco-lg);
+        color: var(--cor-secundaria);
+    }
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+    .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+        grid-column: span 12;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header h1 {
+        margin-bottom: var(--espaco-sm);
+    }
+    :root {
+        --fonte-xxl: 2.25rem;
+        --fonte-xl: 1.75rem;
+    }
+    main#page-content { 
+        margin: var(--espaco-md) auto;
+    }
+    .card__conteudo { padding: var(--espaco-md); }
+    #form-cadastro fieldset { padding: var(--espaco-sm); }
+}
+@media (min-width: 1200px) {
+    :root {
+        --max-width-container: 1140px; 
+    }
+}
+@media (max-width: 992px) {
+    :root {
+        --fonte-xl: 1.75rem;
+    }
+}
+@media (max-width: 576px) { 
+    :root {
+        --fonte-xxl: 2.0rem;
+        --fonte-xl: 1.5rem;
+        --fonte-lg: 1.1rem;
+    }
+    .btn {
+        padding: var(--espaco-xs) var(--espaco-sm);
+    }
+    .card__conteudo {
+        padding: var(--espaco-sm);
+    }
+    header {
+        padding: var(--espaco-sm);
+    }
+    main#page-content { 
+        width: 95%;
+    }
+}
+@media (max-width: 400px) {
+    :root {
+        --fonte-xxl: 1.75rem; 
+        --fonte-xl: 1.25rem;
+    }
+    #form-cadastro fieldset {
+        padding: var(--espaco-xs);
+    }
+    .alert {
+        padding: var(--espaco-sm);
+    }
+}
