@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amigo Animal - Página Inicial</title> 
     <link rel="stylesheet" href="css/estilos.css">
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('theme');
+          if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-mode');
+          }
+        } catch (e) {
+          // Ignora erros de localStorage
+        }
+      })();
+    </script>
 </head>
 <body>
 
@@ -36,9 +48,13 @@
             </li>
 
             <li><a href="cadastro.html" class="btn btn--primario btn--sm">Participe</a></li>
-        </ul>
-    </nav>
-</header>
+            </ul>
+        </nav>
+
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar modo escuro">
+            </button>
+
+    </header>
 
     <main id="page-content"> 
         <div class="row">
